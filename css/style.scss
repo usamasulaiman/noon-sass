@@ -1,0 +1,402 @@
+$bright-turquoise :#40F6C8;
+$bright-turquoise2 :#01c3f9;
+$java :#1BD8E5;
+$mandy :#ED5568;
+$brick-red :#D62739;
+$persimmon :#FC6E51;
+$punch:#DB391F;
+$kournikova :#FFD97C;
+$casablanca :#F6A742;
+$feijoa :#A0D468;
+$olive-drab :#6EAF27 ;
+$shamrock :#48CFAD ;
+$mountain-meadow :#19A784;
+$picton-blue :#4FC1E9;
+$cerulean :#0B9BD0;
+$cornflower-blue:#5D9CEC;
+$denim :#0E65D7;
+$biloba-flower :#AC92EC;
+$fuchsia-blue :#7455C3;
+$sorrel-brown :#C9A684;
+$leather :#986D4D;
+$carissma :#EC87C0;
+$mulberry :#BF4C90;
+$nevada :#656D78;
+$outer-space :#2F3640;
+$alabaster :#F7F7F7;
+$swiss-coffee :#DEDAD7;
+$java2 :#1BCEDF;
+$honey-flower :#5B247A;
+$bossanova :#5E2563;
+$lynch :#65799B;
+$razzle-dazzle-rose :#F030C1;
+$cornflower-blue2 :#6094EA;
+$emerald :#57CA85;
+$blumine :#194F68;
+$mine-shaft :#2E2A2A;
+$dove-gray :#717171;
+$french-gray :#C7C7C9;
+
+body {
+  font-size: 15pt; 
+  line-height: 1.6;
+  font-weight: 400;
+  color: #2E2A2A;
+  background: #fafbfc;
+ }
+
+
+/* –––––––––––––––––––––––––––––––––––––– Typography–––––––––––––––––––––––––––––––––––––– */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 300; }
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 14px; }
+h6 { font-size: 12px; }
+
+@media (max-width: 550px) {
+  h1 { font-size: 20px; }
+  h2 { font-size: 15px; }
+  h3 { font-size: 14px; }
+  h4 { font-size: 12px; }
+}
+
+// @mixin linear-gradient($direction, $fromColor, $toColor) {
+//   background: linear-gradient($direction, $fromColor, $toColor);
+// }
+
+// gradient mixin
+
+@mixin linear-gradient($fromPosition, $toPosition, $fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left $fromPosition, left $toPosition, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient($fromPosition, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient($fromPosition, $fromColor, $toColor); /* FF3.6 */
+  background-image: -ms-linear-gradient($fromPosition, $fromColor, $toColor); /* IE10 */
+  background-image: -o-linear-gradient($fromPosition, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image: linear-gradient($fromPosition, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+// Form line mixin
+
+@mixin vertical-fading-line($widthWithUnit,$heightWithUnit){
+  display: inline-block;
+  width: $widthWithUnit;
+  height: $heightWithUnit;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  background: -webkit-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.1)
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+// Gradients Classes
+.bright-turquoise-gradient{
+  @include linear-gradient( top left, bottom right, $bright-turquoise ,$bright-turquoise2 )
+}
+.mandy-brick-red-gradient{
+  @include linear-gradient( top left, bottom right, $mandy, $brick-red )
+}
+.persimmon-punch-gradient{
+  @include linear-gradient( top left, bottom right, $persimmon,$punch )
+}
+.kournikova-casablanca-gradient{
+  @include linear-gradient( top left, bottom right, $kournikova,$casablanca )
+}
+.feijoa-olive-drab-gradient{
+  @include linear-gradient( top left, bottom right, $feijoa ,$olive-drab )
+}
+.shamrock-mountain-meadow-gradient{
+  @include linear-gradient( top left, bottom right, $shamrock ,$mountain-meadow )
+}
+.picton-blue-cerulean-gradient{
+  @include linear-gradient( top left, bottom right, $picton-blue ,$cerulean )
+}
+.cornflower-blue-denim-gradient{
+  @include linear-gradient( top left, bottom right, $cornflower-blue ,$denim )
+}
+.biloba-flower-fuchsia-blue-gradient{
+  @include linear-gradient( top left, bottom right, $biloba-flower ,$fuchsia-blue )
+}
+.sorrel-brown-leather-gradient{
+  @include linear-gradient( top left, bottom right, $sorrel-brown ,$leather )
+}
+.carissma-mulberry-gradient{
+  @include linear-gradient( top left, bottom right, $carissma ,$mulberry )
+}
+.nevada-outer-space-gradient{
+  @include linear-gradient( top left, bottom right, $nevada ,$outer-space )
+}
+.alabaster-swiss-coffee-gradient{
+  @include linear-gradient( top left, bottom right, $alabaster ,$swiss-coffee )
+}
+.java2-honey-flower-gradient{
+  @include linear-gradient( top left, bottom right, $java2 ,$honey-flower )
+}
+.bossanova-lynch-gradient{
+  @include linear-gradient( top left, bottom right, $bossanova ,$lynch )
+}
+.razzle-dazzle-rose-cornflower-blue2-gradient{
+  @include linear-gradient( top left, bottom right, $razzle-dazzle-rose ,$cornflower-blue2 )
+}
+.emerald-blumine-gradient{
+  @include linear-gradient( top left, bottom right, $emerald ,$blumine )
+}
+
+
+// @mixin button($fromColor, $toColor) {
+// 	// background: linear-gradient(to bottom right, $fromColor, $toColor) ;
+// 	// border: 1px solid mix($fromColor, $toColor, 25%);
+// 	border-radius: 7px;
+//   padding: .5em 1.5em;
+//   color: white;
+//   display: inline-block;
+	
+// 	&:hover {
+// 		cursor: pointer;
+// 		background: linear-gradient(to bottom right, $fromColor, $toColor) ;
+//     // border-color: mix($fromColor, $toColor, 40%);
+//     opacity: 0.8;
+// 	}
+// }
+
+
+// Primary button Class
+.button-primary{
+  @include linear-gradient( top left, bottom right, $bright-turquoise,$bright-turquoise2 );
+  border-radius: 7px;
+  padding: .5em 1.5em;
+  color: white;
+  display: inline-block;
+  width: auto;
+  min-width: 100px;
+  text-align: center;
+
+  &:hover {
+		cursor: pointer;
+    opacity: 0.8;
+	}
+}
+
+// Link Button
+.button-link{
+  background: $alabaster;
+  border-radius: 7px;
+  padding: .5em 1.5em;
+  color: black;
+  display: inline-block;
+  width: auto;
+  min-width: 100px;
+  text-align: center;
+  &:hover {
+		cursor: pointer;
+    background: $swiss-coffee;
+	}
+}
+
+
+// Input form Wrapper classes
+
+//Default Form
+
+  .form-item{
+    position: relative;
+    margin-bottom:10px;
+    max-width: 300px;
+    width:100%;
+    input,.input {
+      width:100%;
+      border-radius: 4px;
+      height: 38px;
+      padding: 6px 10px;
+      border: 1px solid #D1D1D1;
+      border-radius: 4px;
+      box-shadow: none;
+      box-sizing: border-box;
+      &:focus, &.active{
+        box-shadow:none;
+        border:1px solid $bright-turquoise;
+        outline: none !important;
+      }
+      &.expanded{
+        height:150px;
+      }
+    }
+    img{
+      position:absolute;
+      top:10px;
+      height:18px;
+      left:20px;
+      z-index: 1;
+    }
+    .v-line {
+      @include vertical-fading-line( 1px, 36px );
+      z-index: 1;
+      position: absolute;
+    }
+    &.toggle{
+      .v-line{
+        top: 1px;
+        left:50%;
+      }
+    }
+    &.phone{
+      .v-line{
+        top: 1px;
+        left:80px;
+      }
+    }
+  }
+
+
+
+
+//non components css -  for testing
+
+.forms{
+  width: 100%;
+}
+
+.colors{
+  text-align: center;
+  padding:20px 30px;
+  .dimension {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    margin:10px;
+    color:#fff;
+  }
+}
+
+
+.button {
+
+  @include linear-gradient( top left, bottom right, $bright-turquoise,$bright-turquoise2 );
+  border-radius: 5px;
+  width: auto;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  margin:0px auto;
+  
+  box-sizing: border-box;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+  .button-large{
+    display: inline-block;
+    min-width: 190px;
+    font-size: 20px;
+    padding: .5em 1.5em;
+  }
+  .button-medium{
+    display: inline-block;
+    min-width: 120px;
+    font-size: 18px;
+    padding: .5em 1.5em;
+  }
+  .button-small{
+    display: inline-block;
+    min-width: 100px;
+    font-size: 15px;
+    padding: .5em 1.5em;
+  }
+
+  .button-start{
+    display: inline-block;
+    min-width: 80px;
+    min-height: 60px;
+    padding: 10px 10px 5px 10px;
+  }
+  .button-continue{
+    background: white;
+    border:1px solid $bright-turquoise;
+    color: $bright-turquoise;
+    display: inline-block;
+    min-width: 80px;
+    min-height: 60px;
+    padding: 10px 10px 5px 10px;
+  }
+  .button-review{
+    background: #6EAF27;
+    display: inline-block;
+    min-width: 80px;
+    min-height: 60px;
+    padding: 10px 10px 5px 10px;
+  }
+  .pagination {
+    display: flex;
+    flex-wrap:nowrap ;
+    border: 1px solid #d1d1d1;
+    max-width: 350px;
+    border-radius: 5px;
+    background: white;
+    .pagination-item {
+      width: 10px;
+      margin: 15px 30px;
+      text-align: center;
+      font-size: 30px;
+      color: #2E2A2A;
+      line-height: 1;
+        &:hover{
+          cursor: pointer;
+          font-size: 40px;
+        }
+      }
+  
+  }
+
+.modal-wrapper {
+  height: 100%;
+  width:100%;
+  position: relative;
+
+  .lock-icon {
+    position: absolute;
+    left: 14%;
+    top: -6%;
+    z-index: 1;
+    img{
+      width: 100px;
+      height:auto ;
+    }
+  }
+  
+    .modal-content{
+      height:200px;
+      width:400px;
+      border: 1px solid #d1d1d1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      background: white;
+    }
+    .modal-buttons{
+      position: absolute;
+      top: 36%;
+      left: 2%;
+      .modal-button-wrappers{
+        .button-link{
+          margin-right: 20px;
+        }
+      }
+    }
+}
